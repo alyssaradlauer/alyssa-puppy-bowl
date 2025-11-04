@@ -56,8 +56,11 @@ h3 {
   margin: 1rem;
 }
 
-.puppy-details {
+.puppy-desc {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pName {
@@ -80,6 +83,13 @@ h3 {
   object-fit: cover;
   border-radius: 8px;
   margin-right: 10px;
+}
+
+.playerDelete {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .playerDelete:hover {
