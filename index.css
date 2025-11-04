@@ -72,3 +72,15 @@ h2 {
 .pName:hover {
   background-color: rgb(222, 157, 43);
 }
+
+.playerDelete:hover {
+  background-color: rgb(222, 157, 43);
+
+  cursor: pointer;
+}
+
+.submitPlayer:hover {
+  background-color: rgb(222, 157, 43);
+
+  cursor: pointer;
+}

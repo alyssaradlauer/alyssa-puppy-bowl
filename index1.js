@@ -35,7 +35,7 @@ const render = () => {
         <h3>Team: ${singlePuppy.team?.name || "Unassigned"}</h3>
         <button class="playerDelete" data-id=${
           singlePuppy.id
-        }>Delete Player</button>
+        }>Delete Puppy</button>
     </div>
     `;
   }
