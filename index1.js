@@ -12,8 +12,9 @@ const addPuppyForm = document.querySelector("#addPuppyForm");
 const render = () => {
   const html = puppies.map((puppy) => {
     return `
-         <div>
-            <h2 class="pName" data-id="${puppy.id}">${puppy.name}</h2>
+         <div class="pName" data-id="${puppy.id}">
+            <img src="${puppy.imageUrl}" alt="${puppy.name}" class="puppy-thumb" />
+            <h2>${puppy.name}</h2>
          </div>
          `;
   });
