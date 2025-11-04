@@ -103,3 +103,10 @@ h3 {
 
   cursor: pointer;
 }
+
+.formDesc {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem;
+  padding-bottom: 0.5rem;
+}
