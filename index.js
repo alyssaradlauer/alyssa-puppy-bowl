@@ -1,13 +1,10 @@
 //If you would like to, you can create a variable to store the API_URL here.
 //This is optional. if you do not want to, skip this and move on.
 
-
 /////////////////////////////
-/*This looks like a good place to declare any state or global variables you might need*/
+/*State Variables*/
 
 ////////////////////////////
-
-
 
 /**
  * Fetches all players from the API.
@@ -16,7 +13,6 @@
  */
 const fetchAllPlayers = async () => {
   //TODO
-
 };
 
 /**
@@ -36,8 +32,8 @@ const fetchSinglePlayer = async (playerId) => {
  * @param {Object} newPlayer the player to add
  */
 /* Note: we need data from our user to be able to add a new player
- * Do we have a way to do that currently...? 
-*/
+ * Do we have a way to do that currently...?
+ */
 /**
  * Note#2: addNewPlayer() expects you to pass in a
  * new player object when you call it. How can we
@@ -64,7 +60,6 @@ const addNewPlayer = async (newPlayer) => {
 
 const removePlayer = async (playerId) => {
   //TODO
-
 };
 
 /**
@@ -79,17 +74,14 @@ const removePlayer = async (playerId) => {
  *
  * Additionally, for each player we should be able to:
  * - See details of a single player. The page should show
- *    specific details about the player clicked 
+ *    specific details about the player clicked
  * - Remove from roster. when clicked, should remove the player
  *    from the database and our current view without having to refresh
  *
  */
 const render = () => {
   // TODO
-
-  
 };
-
 
 /**
  * Initializes the app by calling render
@@ -99,7 +91,6 @@ const init = async () => {
   //Before we render, what do we always need...?
 
   render();
-
 };
 
 init();
