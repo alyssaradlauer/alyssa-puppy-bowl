@@ -8,8 +8,17 @@
   </head>
   <body>
     <div id="app"></div>
-    <h1>Puppy Roster</h1>
+    <header>Puppy Bowl</header>
+    <div>
+      <h3>Welcome to the puppy bowl! Below is the roster.</h3>
+    </div>
     <hr />
+    <div class="mainContainer">
+      <div id="allPuppies"></div>
+      <hr />
+      <div id="singlePuppy"></div>
+    </div>
+
     <form id="addPuppyForm">
       <label>
         Name:
@@ -28,7 +37,7 @@
       <br />
       <label>
         ImageURL:
-        <input type="url" name="imageURL" />
+        <input type="url" name="imageUrl" />
       </label>
       <br />
       <label>
@@ -38,9 +47,5 @@
       <br />
       <button>Submit Player</button>
     </form>
-    <hr />
-    <div id="allPuppies"></div>
-    <hr />
-    <div id="singlePuppy"></div>
   </body>
 </html>

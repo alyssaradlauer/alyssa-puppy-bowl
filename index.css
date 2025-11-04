@@ -1,0 +1,65 @@
+#addPuppyForm {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 1rem;
+}
+
+#allPuppies {
+  flex: 1;
+  border-right: 2px solid black;
+  padding-right: 1rem;
+}
+
+#singlePuppy {
+  flex: 1;
+  padding-left: 1rem;
+}
+#addPuppyForm > label {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 5px;
+}
+
+header {
+  border: 2px solid black;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+.puppy-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+.puppy-details {
+  text-align: center;
+}

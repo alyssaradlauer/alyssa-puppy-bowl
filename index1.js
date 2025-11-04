@@ -1,3 +1,6 @@
+const COHORT = "2510-et-web-ft-Alyssa";
+const BASE_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${COHORT}`;
+
 //state variables
 let puppies = [];
 let singlePuppy;
@@ -21,10 +24,12 @@ const render = () => {
     onePuppy.innerHTML = "Click on a puppy to see its stats!";
   } else {
     onePuppy.innerHTML = `
-    <div>
-        <h2>${singlePuppy.name}</h2>
-        <h2>${singlePuppy.breed}</h2>
-        <h2>${singlePuppy.status}</h2>
+    <div class="puppy-desc">
+        <img src="${singlePuppy.imageUrl}" alt="${singlePuppy.name}" class="puppy-photo" />
+        <h3>Name: ${singlePuppy.name}</h3>
+        <h3>ID: ${singlePuppy.id}</h3>
+        <h3>Breed: ${singlePuppy.breed}</h3>
+        <h3>Status: ${singlePuppy.status}</h3>
         <button class="playerDelete" data-id=${singlePuppy.id}>Delete Player</button>
     </div>
     `;
@@ -34,9 +39,7 @@ const render = () => {
 //async function in order to communicate with server
 const fetchPuppies = async () => {
   try {
-    const response = await fetch(
-      "https://fsa-puppy-bowl.herokuapp.com/api/2510-et-web-ft/players"
-    );
+    const response = await fetch(`${BASE_URL}/players`);
     //convert json data into usable javascript object
     const data = await response.json();
     console.log(data.data.players);
@@ -57,9 +60,7 @@ allPuppies.addEventListener("click", async (event) => {
     const id = event.target.getAttribute("data-id") * 1;
     console.log(id);
     try {
-      const response = await fetch(
-        `https://fsa-puppy-bowl.herokuapp.com/api/2510-et-web-ft/players/${id}`
-      );
+      const response = await fetch(`${BASE_URL}/players/${id}`);
       const data = await response.json();
       console.log(data.data.player);
       singlePuppy = data.data.player;
@@ -75,6 +76,7 @@ addPuppyForm.addEventListener("submit", async (event) => {
   const formData = new FormData(addPuppyForm);
   const newPuppy = {
     name: formData.get("name"),
+    id: formData.get("id"),
     breed: formData.get("breed"),
     status: formData.get("status"),
     imageUrl: formData.get("imageUrl"),
@@ -82,14 +84,11 @@ addPuppyForm.addEventListener("submit", async (event) => {
   };
   try {
     //this is a POST method
-    const response = await fetch(
-      "https://fsa-puppy-bowl.herokuapp.com/api/2510-et-web-ft/players",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newPuppy),
-      }
-    );
+    const response = await fetch(`${BASE_URL}/players`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPuppy),
+    });
     const data = await response.json();
     console.log(data);
     puppies.push(data.data.newPlayer);
@@ -105,12 +104,9 @@ onePuppy.addEventListener("click", async (event) => {
     const id = event.target.getAttribute("data-id") * 1;
     console.log(id);
     try {
-      const response = await fetch(
-        `https://fsa-puppy-bowl.herokuapp.com/api/2510-et-web-ft/players/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`${BASE_URL}/players/${id}`, {
+        method: "DELETE",
+      });
       puppies = puppies.filter((puppy) => {
         return puppy.id !== id;
       });
