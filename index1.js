@@ -97,6 +97,7 @@ addPuppyForm.addEventListener("submit", async (event) => {
     const data = await response.json();
     console.log(data);
     puppies.push(data.data.newPlayer);
+    addPuppyForm.reset();
     render();
   } catch (error) {
     console.error(error);
