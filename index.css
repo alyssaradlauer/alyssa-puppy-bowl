@@ -38,6 +38,7 @@ header {
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
+  background-color: rgb(222, 157, 43);
 }
 
 h3 {
@@ -62,4 +63,12 @@ h2 {
 
 .puppy-details {
   text-align: center;
+}
+
+.pName {
+  cursor: pointer;
+}
+
+.pName:hover {
+  background-color: rgb(222, 157, 43);
 }
