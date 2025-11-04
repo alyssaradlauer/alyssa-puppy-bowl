@@ -25,12 +25,17 @@ const render = () => {
   } else {
     onePuppy.innerHTML = `
     <div class="puppy-desc">
-        <img src="${singlePuppy.imageUrl}" alt="${singlePuppy.name}" class="puppy-photo" />
+        <img src="${singlePuppy.imageUrl}" alt="${
+      singlePuppy.name
+    }" class="puppy-photo" />
         <h3>Name: ${singlePuppy.name}</h3>
         <h3>ID: ${singlePuppy.id}</h3>
         <h3>Breed: ${singlePuppy.breed}</h3>
         <h3>Status: ${singlePuppy.status}</h3>
-        <button class="playerDelete" data-id=${singlePuppy.id}>Delete Player</button>
+        <h3>Team: ${singlePuppy.team?.name || "Unassigned"}</h3>
+        <button class="playerDelete" data-id=${
+          singlePuppy.id
+        }>Delete Player</button>
     </div>
     `;
   }
@@ -80,7 +85,6 @@ addPuppyForm.addEventListener("submit", async (event) => {
     breed: formData.get("breed"),
     status: formData.get("status"),
     imageUrl: formData.get("imageUrl"),
-    teamId: formData.get("teamId") ? Number(formData.get("teamId")) : null,
   };
   try {
     //this is a POST method
